@@ -15,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        android.support.v7.widget.Toolbar toolbar =  findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
+
         String[] sandwiches = getResources().getStringArray(R.array.sandwich_names);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
                 android.R.layout.simple_list_item_1, sandwiches);
