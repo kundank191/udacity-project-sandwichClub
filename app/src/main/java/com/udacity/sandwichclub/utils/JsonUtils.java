@@ -33,14 +33,17 @@ public class JsonUtils {
             JSONObject nameObject = sandwichJSON.getJSONObject(NAME_OBJECT);
             String mainName = nameObject.getString(MAIN_NAME);
             JSONArray alsoKnownAs = nameObject.getJSONArray(OTHER_NAME_ARRAY);
+
             //All the alsoKnownAs names will be extracted from JSON array and then added to a List of String
             List<String> alsoKnownAsList = getStringListFromJSONArray(alsoKnownAs);
+
             //All the ingredients are extracted here
             JSONArray ingredients = sandwichJSON.getJSONArray(INGREDIENTS_ARRAY);
             List<String> ingredientsList = getStringListFromJSONArray(ingredients);
             String placeOfOrigin = sandwichJSON.getString(PLACE_OF_ORIGIN);
             String description = sandwichJSON.getString(DESCRIPTION);
             String imageUrl = sandwichJSON.getString(IMAGE_URL);
+
             //Adding all the extracted data into the sandwich object
             theSandwich.setAlsoKnownAs(alsoKnownAsList);
             theSandwich.setDescription(description);
@@ -56,10 +59,10 @@ public class JsonUtils {
     }
 
     /**
-     * Takes in a JSON array and returns a list of String
+     * Takes in a JSON array of strings and returns a list of String
      * @param array the json array which is to be converted into a list of strings
      * @return the List<String> from the respective array
-     * @throws JSONException
+     * @throws JSONException if the JSONArray is not in correct format
      */
     private static List<String > getStringListFromJSONArray(JSONArray array) throws JSONException {
         List<String> list = new ArrayList<>();

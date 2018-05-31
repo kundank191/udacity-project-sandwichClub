@@ -69,6 +69,10 @@ public class DetailActivity extends AppCompatActivity {
         Toast.makeText(this, R.string.detail_error_message, Toast.LENGTH_SHORT).show();
     }
 
+    /**
+     * Populated all the textViews with relevant data
+     * @param sandwich which has the data to be populated in the text views
+     */
     private void populateUI(Sandwich sandwich) {
         alsoKnownAsTV.setText(getFormattedList(sandwich.getAlsoKnownAs()));
         placeOfOriginTV.setText(sandwich.getPlaceOfOrigin());

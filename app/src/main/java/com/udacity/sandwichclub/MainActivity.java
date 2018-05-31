@@ -33,6 +33,10 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * Launches the detail activity of the item in List View when clicked
+     * @param position the position of the item whose detail is to be known
+     */
     private void launchDetailActivity(int position) {
         Intent intent = new Intent(this, DetailActivity.class);
         intent.putExtra(DetailActivity.EXTRA_POSITION, position);
